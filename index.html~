@@ -39,7 +39,7 @@
 		<div id="results"></div>
 	</main>
 	<footer style="text-align:left">
-		<p><a class="footer" href="about.html">About</a> &nbsp; &nbsp;<span>Copyright ©2017 rganado.ca/investorsreport</span></p>
+		<p><a class="footer" href="about.html">About</a> &nbsp; &nbsp;</p>
 	</footer>
 	<script>
 		window.onload = function () {
