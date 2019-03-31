@@ -1,11 +1,15 @@
 var User = require('../models/user');
 
+
 module.exports= function(router){
 
     router.post('/users', function (req, res) {
         var user = new User();
         user.username = req.body.username;
         user.password = req.body.password;
+        user.businessFollowing = ["apple", "google", "alibaba"];
+        console.log(user.businessFollowing);
+        
         if(req.body.username ==null|| req.body.username == ''||req.body.password == null || req. body.password == ''){
             
              res.json({success:false,message:'Please enter your username and password'});
@@ -25,7 +29,7 @@ module.exports= function(router){
     
 
     router.post('/authenticate', function(req,res) {
-        User.findOne({username: req.body.username}).select('email username password').exec(function(err, user) {
+        User.findOne({username: req.body.username}).select('businessFollowing email username password').exec(function(err, user) {
             if (err) throw err;
 
             if (!user) {
@@ -35,8 +39,10 @@ module.exports= function(router){
                     var validPassword = user.comparePassword(req.body.password);
                     if (!validPassword) {
                         res.json({ success: false, message: 'Could not validate Password' });
-                    } else {
-                        res.json({ success: true, message: 'User Authenticate' });
+                    } else { //Save user values in session
+                        console.log(user);
+                        req.session.user = user.businessFollowing; 
+                        res.json({ success: true, message: 'User Authenticate', businessFollowing: user.businessFollowing });
                     }
                 } else {
                     res.json({ success: false, message: 'No password provided' });

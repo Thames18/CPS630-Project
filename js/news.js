@@ -1,4 +1,4 @@
-const originalNewsFollowing = ["td", "apple", "bmo"];
+const originalNewsFollowing = ["miranda", "td", "apple", "bmo"];
 let newsFollowing = originalNewsFollowing.map(following => {
   return following + " stocks";
 });
