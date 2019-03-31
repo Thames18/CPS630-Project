@@ -33,7 +33,8 @@ app.use((req, res, next) => {
   next();
 });
 
-
+app.use("/api", appRoutes); //set a /api route
+app.use(express.static(__dirname + "/public"));
 
 var connectionString =
   "mongodb+srv://ambrosek:oRVSzAjpaT0VKFYG@cluster0-foe98.azure.mongodb.net/userBase?retryWrites=true";
