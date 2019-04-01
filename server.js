@@ -36,6 +36,11 @@ app.use((req, res, next) => {
 app.use("/api", appRoutes); //set a /api route
 app.use(express.static(__dirname + "/public"));
 
+/*
+app.post('/news', function (req, res) {
+  res.send(req.session.user);
+}) */
+
 var connectionString =
   "mongodb+srv://ambrosek:oRVSzAjpaT0VKFYG@cluster0-foe98.azure.mongodb.net/userBase?retryWrites=true";
 
@@ -46,9 +51,23 @@ db.once("open", function() {
   console.log(" we're connected to data base!");
 });
 
+/*
+app.get('/news', function(req,res) {
+  console.log("blah    :" + req.session.user);
+  res.send(req.session.user);
+  //res.sendFile(path.join(__dirname + "/public/app/views/index.html"));
+}); */
+
+/*
+app.get("/main", function(req, res) {
+  res.sendFile(path.join(__dirname + "/public/app/views/index2.html"));
+}); */
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname + "/public/app/views/index.html"));
 });
+
+
 
 //start server
 app.listen(port, function() {

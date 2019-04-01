@@ -17,16 +17,15 @@ angular
         controllerAs: "register"
       })
       .when("/main", {
-        //after login direct to main page
-        templateUrl: "app/views/main.html",
-        controller: "signCtrl",
-        controllerAs: "register"
-      })
+        templateUrl: "app/views/index2.html",
+      }) 
       .when("/news", {
-        //after login direct to main page
+        //after login direct to news page
         templateUrl: "app/views/showNews.html",
         styleUrls: "app/css/news.css",
-      })
+        controller: "sessionCtrl",
+        controllerAs: "userdata"
+      }) 
       .otherwise({ redirectTo: "/" }); //other conditions direct to login page
 
     $locationProvider.html5Mode({

@@ -27,6 +27,9 @@ module.exports= function(router){
        
     });
     
+    router.post('/news', (req,res) => {
+        res.json({stuff: req.session.user});
+    });
 
     router.post('/authenticate', function(req,res) {
         User.findOne({username: req.body.username}).select('businessFollowing email username password').exec(function(err, user) {
@@ -39,10 +42,9 @@ module.exports= function(router){
                     var validPassword = user.comparePassword(req.body.password);
                     if (!validPassword) {
                         res.json({ success: false, message: 'Could not validate Password' });
-                    } else { //Save user values in session
-                        console.log(user);
-                        req.session.user = user.businessFollowing; 
-                        res.json({ success: true, message: 'User Authenticate', businessFollowing: user.businessFollowing });
+                    } else {                
+                        res.json({ success: true, message: 'User Authenticate', user: user});
+                        
                     }
                 } else {
                     res.json({ success: false, message: 'No password provided' });

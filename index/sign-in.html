@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+    <link rel="stylesheet" href="fork-awesome.min.css" type="text/css">
+    <meta name="theme-color" content="#f6c915">
+</head>
+<body id="">
+
+    <nav class="navbar navbar-liberapay navbar-static-top navbar-collapse"
+         id="navbar">
+        <div class="container">
+            <ul class="nav navbar-nav pull-right navbar-always">
+                <li class="collapsed">
+                    <a role="button" class="collapsed" data-toggle="collapse"
+                       data-target="#navbar-liberapay-collapse" data-parent="#navbar"
+                       aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" title=""></span>
+
+                    </a>
+                </li>
+
+            </ul>
+            <div class="collapse navbar-collapse navbar-left" id="navbar-liberapay-collapse">
+            <ul class="nav navbar-nav">
+                <li class="hidden-xs">
+                    <a class="navbar-brand" href="index.html">    <span class="fa fa-liberapay" aria-hidden="true" title="Homepage"></span>
+        <span class="sr-only">Homepage</span>
+</a></li>
+                <li class="visible-xs">
+                    <a href="/">    <span class="glyphicon glyphicon-home" aria-hidden="true" title=""></span>
+ <span>Homepage</span></a></li>
+                        <li>
+                <div class="dropdown dropdown-hover">
+                    <a class="dropdown-toggle navbar-btn "
+                       href="/explore/" data-toggle="dropdown" aria-expanded="true">
+                            <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+
+                        <span>Explore</span>
+                    </a>
+                        <ul class="dropdown-menu" role="menu">            <li>
+                <a href="explore.html"> Overview</a>
+        </li>
+        <li>
+                <a href="teams.html"> Teams</a>
+        </li>
+        <li>
+                <a href="organizations.html"> Organizations</a>
+        </li>
+        <li>
+                <a href="individuals.html"> Individuals</a>
+        </li>  
+
+</ul>
+                </div>
+        </li>
+        <li>
+                <div class="dropdown dropdown-hover">
+                    <a class="dropdown-toggle navbar-btn dropdown-toggle-form"
+                       href="/search" data-toggle="dropdown" aria-expanded="true">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+                        <span>Search</span>
+                    </a>
+                        <div class="dropdown-menu" role="search">    <form action="/search" class="search" method="get">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control search"
+                       placeholder="Search Liberapay"
+                       value=""
+                       
+ autocomplete="off"  />
+                <div class="input-group-btn">
+                    <button class="btn btn-default">Go</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+                </div>
+        </li>
+        <li>
+                <div class="dropdown dropdown-hover">
+                    <a class="dropdown-toggle navbar-btn "
+                       href="about.html" data-toggle="dropdown" aria-expanded="true">
+                            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+
+                        <span>About</span>
+                    </a>
+                        <ul class="dropdown-menu" role="menu">            <li>
+                <a href="about.html"> Introduction</a>
+        </li>
+        <li>
+                <a href="faq.html"> FAQ</a>
+        </li>
+        <li>
+                <a href="contact.html"> Contact</a>
+        </li>
+
+
+</ul>
+                </div>
+        </li>
+
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main">
+        <div class="container">
+<div class="row">
+    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <p class="banderole default">If you already have an account, log in:</p>
+<form action="" method="POST">
+
+    <input name="csrf_token" type="hidden" value="Rwd8rEXGRKXAzxtRhr43/9NsySYCAsin" />
+    <input name="form.repost" type="hidden" value="false" />
+<div class="form-group">
+<input name="log-in.id" autocomplete="email" class="form-control"
+       required placeholder="Email address" />
+</div>
+
+<div class="form-group">
+<input name="log-in.password" class="form-control"
+       type="password" autocomplete="current-password"
+       placeholder="Password (optional)" />
+</div>
+
+<p class="help-block">Leave the previous field empty if your account doesn&#39;t have a password, or if you&#39;ve lost it. We&#39;ll send you a login link via email.</p>
+
+<button class="btn btn-default">Go</button>
+
+</form>
+
+    <p class="banderole default">Otherwise, sign up:</p>
+    <a class="btn btn-lg btn-default" href="sign-up.html">Create your account</a>
+
+    </div>
+</div>
+        </div>
+    </div>
+
+     <footer class="container" role="navigation">
+        <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </footer>
+
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="base.js"></script>
+
+</body>
+</html>

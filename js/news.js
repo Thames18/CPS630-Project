@@ -1,7 +1,8 @@
-const originalNewsFollowing = ["td", "apple", "bmo"];
-let newsFollowing = originalNewsFollowing.map(following => {
+const originalNewsFollowing = ["red cross", "", ""];
+/* let newsFollowing = originalNewsFollowing.map(following => {
   return following + " stocks";
-});
+}); */
+let newsFollowing = [...originalNewsFollowing];
 const newsApiKey = "7baf4530cad8435fbfcbd1303e3da391";
 
 const numbToFetch = 5;
