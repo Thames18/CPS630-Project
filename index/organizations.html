@@ -3,9 +3,9 @@
 <head>
     <title>Teams - Explore </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="base.css" type="text/css">
-    <link rel="stylesheet" href="fork-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="assests/bootstrap.css">
+    <link rel="stylesheet" href="assests/base.css" type="text/css">
+    <link rel="stylesheet" href="assests/fork-awesome.min.css" type="text/css">
     <meta name="theme-color" content="#f6c915">
 
 </head>
@@ -14,55 +14,6 @@
     <nav class="navbar navbar-liberapay navbar-static-top navbar-collapse"
          id="navbar">
         <div class="container">
-            <ul class="nav navbar-nav pull-right navbar-always">
-                <li class="collapsed">
-                    <a role="button" class="collapsed" data-toggle="collapse"
-                       data-target="#navbar-liberapay-collapse" data-parent="#navbar"
-                       aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" title=""></span>
-
-                    </a>
-                </li>
-
-<li class="dropdown dropdown-hover">
-<button class="dropdown-toggle navbar-btn" type="button"
-        data-toggle="dropdown">
-    <div class="avatar-cutter-28"><div class="avatar-centerer">
-<img class="avatar" src="https://seccdn.libravatar.org/avatar/18aa72153288930181cfc9853fc3100b?s=160&amp;default=retro
-" />
-</div></div>
-
-    <span class="caret"></span>
-</button>
-<ul class="dropdown-menu dropdown-menu-right" role="menu">
-    <li><a href="/~1574550/edit">Profile</a></li>
-    <li><a href="/~1574550/giving/">Giving</a></li>
-    <li><a href="/~1574550/receiving/">Receiving</a></li>
-    <li><a href="/~1574550/ledger/">Ledger</a></li>
-    <li><a href="/~1574550/payment/">Payment Processors</a></li>
-    <li><a href="/~1574550/identity">Identity</a></li>
-    <li><a href="/~1574550/settings/">Settings</a></li>
-    <li><a href="/~1574550/emails/">Emails</a></li>
-    <li><a href="/~1574550/widgets/">Widgets</a></li>
-    <li><a href="/~1574550/notifications">Notifications</a></li>
-    <li class="divider"></li>
-    <li><a href="/for/new">Create a new community</a></li>
-    <li><a href="/about/teams">Create a new team</a></li>
-    <li class="divider"></li>
-    <li><form action="/sign-out.html" method="POST"
->
-    <input name="back_to" type="hidden" value="/explore/teams" />
-    <input name="csrf_token" type="hidden" value="Rwd8rEXGRKXAzxtRhr43/9NsySYCAsin" />
-    <button class="btn navbar-btn" type="submit">
-        <span class="glyphicon glyphicon-log-out"></span>
-        <span>Sign out</span>
-    </button>
-</form></li>
-</ul>
-</li>
-
-            </ul>
             <div class="collapse navbar-collapse navbar-left" id="navbar-liberapay-collapse">
             <ul class="nav navbar-nav">
                 <li class="hidden-xs">
@@ -75,7 +26,7 @@
                         <li class="active">
                 <div class="dropdown dropdown-hover">
                     <a class="dropdown-toggle navbar-btn "
-                       href="/explore/" data-toggle="dropdown" aria-expanded="true">
+                       href="explore.html" data-toggle="dropdown" aria-expanded="true">
                             <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
 
                         <span>Explore</span>
@@ -84,14 +35,9 @@
                 <a href="explore.html"> Overview</a>
         </li>
         <li class="active">
-                <a href="teams.html"> Teams</a>
-        </li>
-        <li>
                 <a href="organizations.html"> Organizations</a>
         </li>
-        <li>
-                <a href="individuals.html"> Individuals</a>
-        </li>
+
 
 
 </ul>
@@ -99,33 +45,8 @@
         </li>
         <li>
                 <div class="dropdown dropdown-hover">
-                    <a class="dropdown-toggle navbar-btn dropdown-toggle-form"
-                       href="/search" data-toggle="dropdown" aria-expanded="true">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-
-                        <span>Search</span>
-                    </a>
-                        <div class="dropdown-menu" role="search">    <form action="/search" class="search" method="get">
-        <div class="form-group">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control search"
-                       placeholder="Search Liberapay"
-                       value=""
-                       
- autocomplete="off"  />
-                <div class="input-group-btn">
-                    <button class="btn btn-default">Go</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-                </div>
-        </li>
-        <li>
-                <div class="dropdown dropdown-hover">
                     <a class="dropdown-toggle navbar-btn "
-                       href="/about/" data-toggle="dropdown" aria-expanded="true">
+                       href="about.html" data-toggle="dropdown" aria-expanded="true">
                             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
 
                         <span>About</span>
@@ -138,9 +59,6 @@
         </li>
 		 <li>
                 <a href="Contact.html"> Contact</a>
-        </li>
-		<li>
-                <a href="legal.html"> Legal</a>
         </li>
 </ul>
                 </div>
@@ -158,16 +76,10 @@
             data-toggle="collapse" data-target="#subnav-collapse"
             >Explore: Teams <span class="caret"></span></button>
     <ul class="nav nav-tabs" id="subnav-collapse">            <li>
-                <a href="explore.html"> Overview</a>
-        </li>
-        <li>
-                <a href="teams.html"> Teams</a>
+                 <a href="explore.html"> Overview</a>
         </li>
         <li class="active">
                 <a href="organizations.html"> Organizations</a>
-        </li>
-        <li>
-                <a href="individuals.html"> Individuals</a>
         </li>
 </ul>
 </div>
@@ -205,24 +117,14 @@
 </div>
 
     </div>
-        
-
-    <br>
-<p><a class="btn btn-success btn-lg" href="sign-up.html">Create an organization account</a></p>
-
         </div>
     </div>
 
-       <footer class="container" role="navigation">
+    <footer class="container" role="navigation">
         <ul>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
         </ul>
     </footer>
-
-<script src="jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<script src="base.js"></script>
-
 </body>
 </html>
