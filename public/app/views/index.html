@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="userApp" ng-controller="loginCtrl as login">
   <head>
     <!-- Latest compiled and minified CSS -->
     <link
@@ -7,6 +7,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="fork-awesome.min.css" type="text/css" />
+    
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,6 +17,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="app/angular-css/angular-css.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
     <script src="app/controller/signUpCtrl.js"></script>
@@ -23,13 +25,13 @@
     <script src="app/controller/userServices.js"></script>
     <script src="app/controller/authServices.js"></script>
     <script src="app/controller/accessSession.js"></script>
+    <script src="app/controller/news.js"> </script>
 
     <base href="/" />
   </head>
-  <body ng-app="userApp" ng-controller="loginCtrl as login">
+  <body >
     <nav class="navbar navbar-default">
       <div ng-if="!login.isLoggedIn()" class="container-fluid">
-        LoggedIn : {{ login.loggedIn }} sucessesMsg: {{ login.successMsg }}
         <ul class="nav navbar-nav">
           <li><a href="/signup">Sign Up</a></li>
           <li><a href="/login">Log In</a></li>
@@ -38,10 +40,12 @@
       <div ng-if="login.isLoggedIn()">
         <li><a href="/main" ng-click="login.logOut()">Log Out</a></li>
         Logged in as {{login.getUser()}}
-      </div>
       <div class="container-fluid">
-        Account
+        Account Information:
       </div>
+      </div>
+      <a href="/main"> Home</a>
+      <a href="/news">News</a>
     </nav>
 
     <div ng-view></div>

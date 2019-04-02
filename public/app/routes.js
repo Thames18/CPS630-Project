@@ -1,5 +1,4 @@
 
-
 angular
   .module("appRoutes", ["ngRoute"]) //import ngroute
   .config(function($routeProvider, $locationProvider) {
@@ -22,7 +21,7 @@ angular
       .when("/news", {
         //after login direct to news page
         templateUrl: "app/views/showNews.html",
-        styleUrls: "app/css/news.css",
+        css: "app/css/news.css",
         controller: "sessionCtrl",
         controllerAs: "userdata"
       }) 

@@ -181,4 +181,4 @@ function isOverflow(element) {
   );
 }
 
-window.addEventListener("load", fetchAllNews);
+//window.addEventListener("load", fetchAllNews);
