@@ -9,6 +9,7 @@ angular
         controller: "loginCtrl",
         controllerAs: "login"
       })
+      
       .when("/signup", {
         //direct to sign up
         templateUrl: "app/views/signup.html",
@@ -16,14 +17,18 @@ angular
         controllerAs: "register"
       })
       .when("/main", {
-        templateUrl: "app/views/index2.html",
+        templateUrl: "app/views/mainPage.html",
+      }) 
+      .when("/contact", {
+        templateUrl: "app/views/contact.html",
+      })
+      .when("/about", {
+        templateUrl: "app/views/about.html",
       }) 
       .when("/news", {
         //after login direct to news page
         templateUrl: "app/views/showNews.html",
-        css: "app/css/news.css",
-        controller: "sessionCtrl",
-        controllerAs: "userdata"
+        css: "app/css/news.css"
       }) 
       .otherwise({ redirectTo: "/" }); //other conditions direct to login page
 

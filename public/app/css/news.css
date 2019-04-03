@@ -1,63 +1,6 @@
-/* Global */
-
-ul {
-  list-style: none;
-}
-
-main {
-  padding: 0;
-  margin: 0;
-  min-height: 100%;
-  height: auto;
-  height: 100%;
-  margin: 0 auto -142px;
-}
-
-/* Nav */
-
-input[type="submit"]:hover {
-  border: 1px solid black;
-  color: black;
-}
-
-a.nav {
-  padding: 10px;
-  display: inline;
-  text-decoration: none;
-  color: grey;
-  transition: color 1s, background-color 1s, border-radius 1s;
-  background-color: white;
-  border-radius: 10px;
-}
-
-a.nav:hover {
-  background-color: #555;
-  color: white;
-  border-radius: 10px;
-}
-
-#loginform:before {
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  right: 0px;
-  top: -30px;
-  border: 15px solid;
-  border-color: transparent transparent #dddddd transparent;
-}
-
-nav > img {
-  width: 25px;
-  height: 25px;
-  float: right;
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-}
-
 /* News */
 
-body {
+.news-container {
   box-sizing: border-box;
   position: absolute;
   display: block;
@@ -70,7 +13,7 @@ body {
   grid-gap: 15px 10px;
 }
 
-header {
+.news-header {
   grid-column: span 2;
   grid-row: header;
   border: 1px black solid;
@@ -209,18 +152,6 @@ header {
   margin-top: 1vw;
 }
 
-/* Footer */
-.contact-sec {
-  width: 100%;
-}
-
-footer {
-  text-align: right;
-  color: white;
-  font-size: 2vw;
-  top: 95%;
-  height: 5%;
-}
 
 @media only screen and (max-height:500px) {
 	

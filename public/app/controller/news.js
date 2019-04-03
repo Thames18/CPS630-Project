@@ -1,7 +1,8 @@
-const originalNewsFollowing = ["td", "apple", "bmo"];
+const originalNewsFollowing = ["CANADIAN RED CROSS", "The Salvation Army"];
 let newsFollowing = originalNewsFollowing.map(following => {
-  return following + " stocks";
-});
+  return following; //If want to transform array
+}); 
+
 const newsApiKey = "7baf4530cad8435fbfcbd1303e3da391";
 
 const numbToFetch = 5;
