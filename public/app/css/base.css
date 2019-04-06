@@ -32,6 +32,15 @@ z-index:-1}.dropdown-hover .dropdown-menu::before{height:100%;
 margin-top:-5px}.dropdown-hover .dropdown-menu::after{border-radius:0 0 25px 25px;
 height:75px}.dropdown-hover:hover .dropdown-menu,.dropdown-hover .dropdown-toggle:focus+.dropdown-menu{display:block}a.dropdown-toggle{display:block}a.dropdown-toggle:active,a.dropdown-toggle:focus,a.dropdown-toggle:hover{text-decoration:none}#history td,#history th{text-align:right}#history td[title],#history th[title]{cursor:help}#history td:first-child,#history th:first-child{text-align:left}#history>tbody>tr{border-top:1px dashed #ddd}#history td,#history th{border:none}#history .day-open{border-top-style:solid;
 font-weight:bold}
+@media(max-width: 991px)
+{.inline-boxes{text-align:center}}.inline-boxes>.inline-box{display:inline-block;max-width:100%;margin-right:22px;vertical-align:top}.profile-box-embedded{border-radius:6px;text-align:center;width:3
+20px}.profile-box-embedded .platform-icon{margin-top:-3px}.profile-box-embedded h4{margin-top:5px;line-height:23px;max-height:46px;overflow:hidden;text-overflow:ellipsis}.profile-box-embedded 
+.summary{height:66px;margin:1em 0 22px;overflow:hidden;text-overflow:ellipsis}.profile-box-embedded .numbers{display:flex;justify-content:space-around}.profile-box-embedded .numbers>dl{margin:0 10px 0 0}.profile-box-embedded .numbers>dl>dt{color:#555;font-size:85%;margin-bottom:5px}.profile-box-embedded .numbers>dl>dd{color:#5bc0de;font-size:20px;line-height:1em}.profile-box-embedded 
+.numbers>dl>dd>small{color:#777;font-size:14px}.repo{text-align:left;width:450px}.repo>.panel{border-radius:6px}.repo h4{margin:0.3em 0 0}.repo h4>span.inline-block{margin:0 1ex 0.6em 0}.repo 
+.glyphicon-star{color:#777;font-size:80%}.repo .description{margin:0.2em 0 1em}.repo.edit{margin:1.5em 0;width:100%}
+@media (max-width: 
+991px){.inline-box.repo{display:block;margin-right:22px;width:auto}.inline-box.repo>.panel{margin-left:auto;margin-right:auto;max-width:450px}}@media (min-width: 
+1200px){.inline-box.repo{width:550px}}.
 #history tr.zero .amount,
 #history tr.zero .wallet,
 #history tr.zero .fees,
