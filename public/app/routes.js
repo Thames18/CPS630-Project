@@ -24,7 +24,7 @@ angular
       })
       .when("/about", {
         templateUrl: "app/views/about.html",
-      })
+      }) 
       .when("/news", {
         //after login direct to news page
         templateUrl: "app/views/showNews.html",
