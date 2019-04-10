@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introduction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+    <link rel="stylesheet" href="fork-awesome.min.css" type="text/css">
+    <script src="search.js"></script>
+</head>
+<body id="homepage">
+
+    <nav
+         id="navbar">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                       
+        <li>
+                <div class="dropdown dropdown-hover">
+                    <a class="dropdown-toggle navbar-btn "
+                       href="about.html" data-toggle="dropdown" aria-expanded="true">
+                        <span>About</span>
+                    </a>
+                        <ul class="dropdown-menu" role="menu">            <li>
+                <a href="about.html"> Introduction</a>
+        </li>
+        <li>
+                <a href="contact.html"> Contact</a>
+        </li>
+</ul>
+                </div>
+        </li>
+
+            </ul>
+            </div>
+    </nav>
+
+    <div id="main">
+        <div class="container">
+            <div id="subnav"></div>
+    <div class="jumbotron section">
+    <p>DonorPR is a donations platform.</p>
+    <p>best destination for donating and fundraising online.</p>
+    </div>
+    <p></p>
+
+    <input type="textbox" id="searchText" />
+    <input type="button" id="searchButton" value="Search" onclick="callAPI()"/>
+    <div class="resultContainer" id="results"></div>
+
+
+    <footer class="container" role="navigation">
+        <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
