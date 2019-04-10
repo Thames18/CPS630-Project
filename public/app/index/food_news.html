@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FOOD BANKS CANADA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+    <link rel="stylesheet" href="fork-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="news.css" />
+    <script src="news.js"></script>    
+    <meta name="theme-color" content="#f6c915">
+</head>
+<body id="">
+
+    <nav>
+        <div class="container">
+            <div class="collapse navbar-collapse navbar-left">
+            <ul class="nav navbar-nav">
+                <li class="show">
+                    <a class="navbar-brand" href="index.html" data-toggle="dropdown" aria-expanded="true">    
+				<h4>Homepage</h4>
+</a></li>
+                      
+        <li>
+                <div class="dropdown dropdown-hover">
+                    <a class="dropdown-toggle navbar-btn "
+                       href="about.html" data-toggle="dropdown" aria-expanded="true">
+                        <h4>About</h4>
+                    </a>
+                        <ul class="dropdown-menu" role="menu">     
+        <li>
+                <a href="about.html"> Introduction</a>
+        </li>
+        <li>
+                <a href="contact.html"> Contact</a>
+        </li>	
+        <li>
+            <a href="faq.html"> FAQ</a>
+</li>
+</ul>
+                </div>
+        </li>
+
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="main">
+        <div class="container">
+
+<div>
+    <div>
+        
+        <div class="col-md-9 logo-and-info">
+            <div class="logo">
+       <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Food_Banks_Canada_logo.svg/250px-Food_Banks_Canada_logo.svg.png"/>
+            </div>
+            <div>
+                <h1>FOOD BANKS CANADA</h1>
+            </div>
+        </div>
+        
+
+    </div>
+  
+    <div>
+        <ul class="nav nav-pills simple-nav-actions">
+            <li >
+                <a href="food_about.html">
+                    <span>About</span>
+                </a>
+                </li>
+             <li class="active ">
+                <a href="news.html">
+                    <span>News</span>
+                </a>
+                </li>
+        </ul>
+    </div>
+</div>
+<div>
+    <div>
+        <br></br>
+<br><button onclick="fetchAllNews(); return false;"> show news</button>
+
+</br>
+    <section class="sidebar">
+
+    </section> 
+   
+    <section class="news-container" id="main-container">
+    </section>
+	
+	<script>
+	const originalNewsFollowing = ["Food Banks Canada"];
+let newsFollowing = originalNewsFollowing.map(following => {
+  return following; //If want to transform array
+}); 
+
+const newsApiKey = "7baf4530cad8435fbfcbd1303e3da391";
+
+const numbToFetch = 5;
+
+class News {
+  constructor(name) {
+    this.url = `https://newsapi.org/v2/everything?q=${name}&apiKey=${newsApiKey}`;
+    console.log(this.url);
+    this.newsStories = this.getNews();
+  }
+  async getNews() {
+    let stories = [];
+    return new Promise((resolve, reject) => {
+      let apiReq, newsData, jsonText;
+      apiReq = new XMLHttpRequest();
+      apiReq.open("GET", this.url, true);
+      apiReq.onreadystatechange = () => {
+        if (apiReq.readyState === 4) {
+          if (apiReq.status === 200) {
+            jsonText = apiReq.responseText;
+            newsData = JSON.parse(jsonText);
+            stories = [...newsData["articles"].slice(0, numbToFetch)];
+
+            resolve(stories);
+          } else {
+            reject(apiReq.status);
+          }
+        }
+      };
+      apiReq.send();
+    });
+  }
+  async isNewsLoaded() {
+    const news = await this.newsStories;
+    return news != null;
+  }
+}
+
+let news = [];
+
+async function fetchAllNews() {
+    console.log("test");
+  await Promise.all(
+    newsFollowing.map(async following => {
+      const newsSection = new News(following);
+      await newsSection.isNewsLoaded();
+      return newsSection.newsStories;
+    })
+  )
+    .then(values => {
+      news = values.flat();
+      console.log(news);
+    })
+    .catch(() => {
+      document.getElementById("errormessage").innerHTML = "No news to print";
+    });
+  for (i = 0; i < newsFollowing.length; i++) {
+    console.log(i);
+    createNewsSection(i);
+    for (j = 0; j < numbToFetch; j++) {
+      let indexValue = i * numbToFetch + j;
+      createNewsModule(
+        i,
+        j,
+        news[indexValue].title,
+        news[indexValue].urlToImage,
+        news[indexValue].url
+      );
+    }
+  }
+}
+
+function createNewsSection(idNumb) {
+  section = document.createElement("section");
+  section.classList.add("news-sections");
+  section.id = `new-section-${idNumb}`;
+
+  let sectionCover = document.createElement("div");
+  sectionCover.classList.add("section-cover");
+  sectionCover.id = `section-cover-${idNumb}`;
+  sectionCover.addEventListener("click", e => {
+    for (let siblings of e.target.parentNode.children) {
+      console.log(siblings.style.position);
+      if (siblings.style.position == "absolute") {
+        undoExpand(siblings);
+      }
+    }
+  });
+
+  let sectionTitle = document.createElement("h2");
+  sectionTitle.classList.add("section-title");
+  sectionTitle.innerHTML = originalNewsFollowing[idNumb];
+
+  section.appendChild(sectionTitle);
+  section.appendChild(sectionCover);
+  document.getElementById("main-container").appendChild(section);
+}
+
+// newSection takes the search newsFollowing value, idNumb = news counter starting at 0, news title, image link
+function createNewsModule(newsSection, idNumb, title, imgLink, sourceLink) {
+  let section, figure, img, figcaption, caption;
+  section = document.createElement("div");
+  section.classList.add("minor-news");
+  section.id = `news${idNumb}`;
+
+  figure = document.createElement("figure");
+  figure.addEventListener("click", expandToggle);
+
+  img = document.createElement("img");
+  img.src = imgLink;
+
+  link = document.createElement("a");
+  link.classList.add("news-link");
+  link.id = `link${idNumb}`;
+  link.innerHTML = "SOURCE";
+  link.href = sourceLink;
+
+  figure.appendChild(img);
+  figure.innerHTML += title;
+
+  section.appendChild(figure);
+
+  document.getElementById(`new-section-${newsSection}`).appendChild(section);
+  document.getElementById(`new-section-${newsSection}`).appendChild(link);
+  console.log("z");
+}
+
+function closestParentbyClass(el, className) {
+  if (el.parentNode.classList.contains(className)) {
+    return el.parentNode;
+  } else {
+    return closestParentbyClass(el.parentNode, className);
+  }
+}
+
+function expandToggle(e) {
+  const news = closestParentbyClass(e.target, "minor-news");
+  if (news.style.position != "absolute") {
+    hoverExpand(e);
+  }
+}
+
+function hoverExpand(e) {
+  const news = closestParentbyClass(e.target, "minor-news");
+  news.style.width =
+    parseFloat(window.getComputedStyle(news).width) * 1.5 + "px";
+  news.style.height =
+    parseFloat(window.getComputedStyle(news).height) * 1.5 + "px";
+  news.style.position = "absolute";
+  news.style.zIndex = 11;
+  const newsSec = closestParentbyClass(news, "news-sections");
+  const intId = news.id.replace(/\D/g, "");
+  document.querySelector(`#${newsSec.id} > .section-cover`).style.display =
+    "block";
+  document.querySelector(`#${newsSec.id} > #link${intId}`).style.display =
+    "block";
+}
+
+function undoExpand(e) {
+  let news = e;
+  news.style.width =
+    parseFloat(window.getComputedStyle(news).width) / 1.5 + "px";
+  news.style.height =
+    parseFloat(window.getComputedStyle(news).height) / 1.5 + "px";
+  news.style.position = "static";
+  news.style.zIndex = 1;
+  const newsSec = closestParentbyClass(news, "news-sections");
+  const intId = news.id.replace(/\D/g, "");
+  document.querySelector(`#${newsSec.id} > .section-cover`).style.display =
+    "none";
+  document.querySelector(`#${newsSec.id} > #link${intId}`).style.display =
+    "none";
+}
+
+function isOverflow(element) {
+  return (
+    element.scrollHeight > element.clientHeight ||
+    element.scrollWidth > element.clientWidth
+  );
+}
+//window.addEventListener("load", fetchAllNews);
+</script>
+</div></div> <footer class="container" role="navigation">
+        <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </footer>
+    </div></div>
+</body>
+</html>
